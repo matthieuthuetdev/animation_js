@@ -7,11 +7,6 @@ let m_v = Math.random() *2;
 let size = 0;
 
 const animation = setInterval(() => {
-    if (size > 100) {
-        clearInterval(animation);
-        window.location.href = './avis.php'; 
-        return;  
-    }
 
     if (left_direction) {
         left += h_v;
@@ -45,10 +40,10 @@ const animation = setInterval(() => {
         }
     }
 
-    size = size + 0.2;
     const sond_moov = new Audio("./audio/moov.mp3");
     sond_moov.play();
     const div = document.createElement('div');
+    size = 10
     div.style.width = size + "%";
     div.style.height = size + "%";
     div.style.backgroundColor = 'red';
@@ -57,4 +52,4 @@ const animation = setInterval(() => {
     div.style.left = left + '%';
     div.style.top = topPosition + '%';
     document.body.appendChild(div);
-}, 100);
+}, 1);
